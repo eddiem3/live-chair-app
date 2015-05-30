@@ -4,9 +4,14 @@ angular.module('starter.controllers', [])
 	$scope.data = {};
 
 	$scope.login = function() {
-
+	    LoginService.loginUser($scope.data.email, $scope.data.password).success(function(data) {
 		$state.go('tab.dash');
-
+	    }).error(function(data) {
+		var alertPopup = $ionicPopup.alert({
+		    title: 'Login failed!',
+		    template: 'Please check your credentials!'
+		});
+	    });
 	}
     })
 

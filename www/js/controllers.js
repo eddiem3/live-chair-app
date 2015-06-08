@@ -26,12 +26,18 @@ angular.module('starter.controllers', [])
     })
 
     .controller('BarbersCtrl', function($scope, Barbers) {
-	$scope.barbers = Barbers.all();	
+	$scope.barbers = Barbers.all();
+
     })
 
 
-    .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-	$scope.chat = Chats.get($stateParams.chatId);
+    .controller('BarberDetailCtrl', function($scope, $stateParams, Barbers) {
+	$scope.barber = Barbers.get($stateParams.barberId);
+
+	$scope.getTimes=function(n){
+	    return new Array(parseInt(n));
+	};  
+	
     })
 
     .controller('AccountCtrl', function($scope) {

@@ -55,7 +55,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 		}
 	    })
 
-	
+	    .state('tab.barber-detail', {
+		url: '/barbers/:barberId',
+		views: {
+		    'tab-barbers':{
+			templateUrl: 'templates/barber-detail.html',
+			controller: 'BarberDetailCtrl'
+		    }
+		}
+	    })
 	    // .state('tab.chats', {
 	    // 	url: '/chats',
 	    // 	views: {

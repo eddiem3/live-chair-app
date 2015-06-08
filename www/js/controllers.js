@@ -34,6 +34,14 @@ angular.module('starter.controllers', [])
     .controller('BarberDetailCtrl', function($scope, $stateParams, Barbers) {
 	$scope.barber = Barbers.get($stateParams.barberId);
 
+	$scope.images = [];
+
+	$scope.loadImages = function() {
+	    for(var i = 0; i < 100; i++) {
+		$scope.images.push({id: i, src: "http://placehold.it/50x50"});
+	    }
+	};
+
 	$scope.getTimes=function(n){
 	    return new Array(parseInt(n));
 	};  

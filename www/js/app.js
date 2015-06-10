@@ -64,25 +64,37 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 		    }
 		}
 	    })
-	    // .state('tab.chats', {
-	    // 	url: '/chats',
-	    // 	views: {
-	    // 	    'tab-chats': {
-	    // 		templateUrl: 'templates/tab-chats.html',
-	    // 		controller: 'ChatsCtrl'
-	    // 	    }
-	    // 	}
-	    // })
-	    // .state('tab.chat-detail', {
-	    // 	url: '/chats/:chatId',
-	    // 	views: {
-	    // 	    'tab-chats': {
-	    // 		templateUrl: 'templates/chat-detail.html',
-	    // 		controller: 'ChatDetailCtrl'
-	    // 	    }
-	    // 	}
-	    // })
+
+	// .state('barber-schedule', {
+	// 	url:'/barbers/:barberId/schedule',
+	// 	views: {
+	// 	    'tab-barbers': {
+	// 		templateUrl: 'templates/barber-schedule.html',
+	// 		controller: 'BarberDetailCtrl'
+	// 	    }
+	// 	}
+	// })
 	
+	//    })
+	// .state('tab.chats', {
+	// 	url: '/chats',
+	// 	views: {
+	// 	    'tab-chats': {
+	// 		templateUrl: 'templates/tab-chats.html',
+	// 		controller: 'ChatsCtrl'
+	// 	    }
+	// 	}
+	// })
+	// .state('tab.chat-detail', {
+	// 	url: '/chats/:chatId',
+	// 	views: {
+	// 	    'tab-chats': {
+	// 		templateUrl: 'templates/chat-detail.html',
+	// 		controller: 'ChatDetailCtrl'
+	// 	    }
+	// 	}
+	// })
+
 	    .state('tab.barbers', {
 		url: '/barbers',
 		views: {
@@ -101,7 +113,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 			controller: 'AccountCtrl'
 		    }
 		}
-	    });
+	    })
 
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('/login');

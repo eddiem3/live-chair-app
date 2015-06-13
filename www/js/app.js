@@ -65,15 +65,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 		}
 	    })
 
-	// .state('barber-schedule', {
-	// 	url:'/barbers/:barberId/schedule',
-	// 	views: {
-	// 	    'tab-barbers': {
-	// 		templateUrl: 'templates/barber-schedule.html',
-	// 		controller: 'BarberDetailCtrl'
-	// 	    }
-	// 	}
-	// })
+	.state('barber-schedule', {
+	    url:'/barbers/:barberId/schedule',
+	    views: {
+		'tab-schedule': {
+		    templateUrl: 'templates/barber-schedule.html',
+		    controller: 'BarberDetailCtrl'
+		}
+	    }
+	})
 	
 	//    })
 	// .state('tab.chats', {

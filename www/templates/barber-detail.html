@@ -44,6 +44,11 @@
 
     <!--<img src="http://placehold.it/100x100">-->
 
+    <div class="dropdown">
+      <datetimepicker data-ng-model="data.dateDropDownLink" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' }"/>      
+    </div>
+    
+    
     <div id="images" ng-init="loadImages()">
       <div class="row" ng-repeat="image in images" ng-if="$index % 4 === 0">
 	<div class="col col-25" ng-if="$index < images.length">

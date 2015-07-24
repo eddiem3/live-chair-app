@@ -1,19 +1,43 @@
 angular.module('starter.controllers', ['ui.bootstrap.datetimepicker'])
 
-    .controller('LoginCtrl', function($scope, LoginService, $ionicPopup, $state) {
-	$scope.data = {};
+    // .controller('LoginCtrl', function($scope, $ionicPopup, $state) {
+    // 	$scope.data = {};
+
+    // 	$scope.login = function() {
+    // 	    LoginService.loginUser($scope.data.email, $scope.data.password).success(function(data) {
+    // 		$state.go('tab.dash');
+    // 	    }).error(function(data) {
+    // 		var alertPopup = $ionicPopup.alert({
+    // 		    title: 'Login failed!',
+    // 		    template: 'Please check your credentials!'
+    // 		});
+    // 	    });
+    // 	}
+    // })
+
+
+    .controller('LoginCtrl', function($scope, $ionicPopup, $state) {
+    	$scope.data = {};
 
 	$scope.login = function() {
-	    LoginService.loginUser($scope.data.email, $scope.data.password).success(function(data) {
-		$state.go('tab.dash');
-	    }).error(function(data) {
-		var alertPopup = $ionicPopup.alert({
-		    title: 'Login failed!',
-		    template: 'Please check your credentials!'
-		});
-	    });
+	    Parse.User.logIn($scope.data.email, $scope.data.password, {
+		success: function(user) {
+		    $state.go('tab.barbers');
+		},
+		error: function(user, error) {
+		    var alertPopup = $ionicPopup.alert({
+ 			title: 'Login failed!',
+			template: 'Please check your credentials!'
+		    });
+		}
+	    })
 	}
     })
+
+	
+
+
+
 
 
     .controller('DashCtrl', function($scope) {})

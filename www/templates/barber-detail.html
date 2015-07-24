@@ -25,16 +25,16 @@
       
       <!--Arrange profile data -->
       <div id="profile-info">
-	<img id="profile-image" ng-src="{{barber.photo}}">
+	<img id="profile-image" ng-src="{{barber.profilePhoto}}">
 	<h3 id="profile-name">{{barber.name}}</h3>
 	<div class="item-stars">
 	  <!--<i ng-repeat="i in " class="ion-android-star-outline"></i>-->
 	  <div>
-	    <i ng-repeat="n in getTimes(barber.rating) track by $index"class="ion-android-star-outline"></i>
+	    <!--<i ng-repeat="n in getTimes(barber.rating) track by $index"class="ion-android-star-outline"></i>-->
 	  </div>
 
 	</div>
-	<h4 id="shop">{{barber.shop}}</h4>
+	<h4 id="shop">{{barber.shopName}}</h4>
 	skills: <span ng-repeat="skill in barber.skills" id="skills">{{skill + " "}}</span>
       </div>
 

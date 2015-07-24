@@ -2,14 +2,15 @@ angular.module('starter.services', [])
 
 
 
-    .factory('Barbers', function() {	
+    .factory('Barbers', function() {
+	var barbers = [];
+	
+	var Barber = Parse.Object.extend("Barber")
+	var query = new Parse.Query(Barber);
 	
 	return {
 	    get_barbers: function(){
-		var barbers = [];
-		
-		var Barber = Parse.Object.extend("Barber")
-		var query = new Parse.Query(Barber);
+
 		
 		query.find({
 		    success: function(results) {
@@ -27,9 +28,21 @@ angular.module('starter.services', [])
 		console.log(barbers);
 		return barbers;
 	    },
+
+
+	    get_barber: function(barberId) {
+		for (var i = 0; i < barbers.length; i++) {
+		    if (barbers[i].id === barberId) {
+			return barbers[i];
+		    }
+		}
+
+	    }	   		    
+	};	  
+    })
 	    
-	};
-    });
+			  
+
 
 
 

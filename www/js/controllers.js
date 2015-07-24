@@ -1,20 +1,5 @@
 angular.module('starter.controllers', ['ui.bootstrap.datetimepicker'])
 
-    // .controller('LoginCtrl', function($scope, $ionicPopup, $state) {
-    // 	$scope.data = {};
-
-    // 	$scope.login = function() {
-    // 	    LoginService.loginUser($scope.data.email, $scope.data.password).success(function(data) {
-    // 		$state.go('tab.dash');
-    // 	    }).error(function(data) {
-    // 		var alertPopup = $ionicPopup.alert({
-    // 		    title: 'Login failed!',
-    // 		    template: 'Please check your credentials!'
-    // 		});
-    // 	    });
-    // 	}
-    // })
-
 
     .controller('LoginCtrl', function($scope, $ionicPopup, $state) {
     	$scope.data = {};
@@ -35,11 +20,6 @@ angular.module('starter.controllers', ['ui.bootstrap.datetimepicker'])
     })
 
 	
-
-
-
-
-
     .controller('DashCtrl', function($scope) {})
 
     .controller('ChatsCtrl', function($scope, Chats) {
@@ -56,7 +36,7 @@ angular.module('starter.controllers', ['ui.bootstrap.datetimepicker'])
 
 
     .controller('BarberDetailCtrl', function($scope, $stateParams, Barbers) {
-	$scope.barber = Barbers.get($stateParams.barberId);
+	$scope.barber = Barbers.get_barber($stateParams.objectId);
 
 	$scope.images = [];
 

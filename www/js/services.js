@@ -2,29 +2,7 @@ angular.module('starter.services', [])
 
 
 
-    .factory('Barbers', function() {
-
-	
-	
-	// var barbers = [{
-	//     id: 0,
-	//     name: 'Michael DeVore',
-	//     shop: 'Live Chair',
-	//     photo: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png',
-	//     skills: ['fade', 'tape up'],
-	//     rating: 5
-	// },
-
-	// 	       {
-	// 		   id:1,
-	// 		   name: 'Eddie Massey',
-	// 		   shop: 'Live Chair',
-	// 		   photo: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460',
-	// 		   skills: ['fade', 'tape up'],
-	// 		   rating: 4
-			   
-	// 	       }];
-	
+    .factory('Barbers', function() {	
 	
 	return {
 	    get_barbers: function(){
@@ -50,18 +28,6 @@ angular.module('starter.services', [])
 		return barbers;
 	    },
 	    
-	    all: function() {
-		return barbers;
-	    },
-	    
-	    get: function(barberId) {
-		for (var i = 0; i < barbers.length; i++) {
-		    if (barbers[i].id === parseInt(barberId)) {
-		 	return barbers[i];
-	 	    }
- 		}
- 		return null;
-	    }	    
 	};
     });
 

@@ -50,7 +50,7 @@ angular.module('starter.controllers', ['ui.bootstrap.datetimepicker'])
     })
 
     .controller('BarbersCtrl', function($scope, Barbers) {
-	$scope.barbers = Barbers.all();
+	$scope.barbers = Barbers.get_barbers();
 
     })
 

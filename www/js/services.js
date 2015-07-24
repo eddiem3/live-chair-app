@@ -4,27 +4,52 @@ angular.module('starter.services', [])
 
     .factory('Barbers', function() {
 
-	var barbers = [{
-	    id: 0,
-	    name: 'Michael DeVore',
-	    shop: 'Live Chair',
-	    photo: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png',
-	    skills: ['fade', 'tape up'],
-	    rating: 5
-	},
+	
+	
+	// var barbers = [{
+	//     id: 0,
+	//     name: 'Michael DeVore',
+	//     shop: 'Live Chair',
+	//     photo: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png',
+	//     skills: ['fade', 'tape up'],
+	//     rating: 5
+	// },
 
-		       {
-			   id:1,
-			   name: 'Eddie Massey',
-			   shop: 'Live Chair',
-			   photo: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460',
-			   skills: ['fade', 'tape up'],
-			   rating: 4
+	// 	       {
+	// 		   id:1,
+	// 		   name: 'Eddie Massey',
+	// 		   shop: 'Live Chair',
+	// 		   photo: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460',
+	// 		   skills: ['fade', 'tape up'],
+	// 		   rating: 4
 			   
-		       }];
+	// 	       }];
 	
 	
 	return {
+	    get_barbers: function(){
+		var barbers = [];
+		
+		var Barber = Parse.Object.extend("Barber")
+		var query = new Parse.Query(Barber);
+		
+		query.find({
+		    success: function(results) {
+			for (var i =0; i < results.length; i++) {
+			    barbers.push(results[i].toJSON());
+			}
+		    },
+
+		    error: function(error) {
+			alert("Error: " + error.code + " " + error.message);
+		    }
+
+		    
+		})
+		console.log(barbers);
+		return barbers;
+	    },
+	    
 	    all: function() {
 		return barbers;
 	    },

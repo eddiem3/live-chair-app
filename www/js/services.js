@@ -31,8 +31,11 @@ angular.module('starter.services', [])
 
 
 	    get_barber: function(barberId) {
+		
 		for (var i = 0; i < barbers.length; i++) {
-		    if (barbers[i].id === barberId) {
+		    //console.log("Here's a barber:" +barbers[i].objectId);
+		    
+		    if (barbers[i].objectId === barberId) {			
 			return barbers[i];
 		    }
 		}

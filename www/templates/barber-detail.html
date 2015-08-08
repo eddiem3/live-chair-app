@@ -3,22 +3,9 @@
   'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
--->
+  -->
+
 <ion-view view-title="{{barber.name}}">
-<!--  <ion-content class="padding">
-    <img ng-src="{{barber.photo}}" style="width: 64px; height: 64px">
-    <p>
-      {{barber.shop}}
-    </p>
-  </ion-content>-->
-
-
-<!--<div class="bar bar-header bar-danger">
-    <button class="button button-icon"><i class="icon-person-add"></i></button>
-    <h1 class="title">Me</h1>
-    <button class="button button-icon"><i class="icon-gear-b"></i></button>
-  </div>-->
-
   <ion-content has-header="true">
     <div id="profile-bg"></div>
     <div id="content">
@@ -44,10 +31,16 @@
 
     <!--<img src="http://placehold.it/100x100">-->
 
-    <div class="dropdown">
-      <datetimepicker data-ng-model="data.dateDropDownLink" data-datetimepicker-config="{ dropdownSelector: '#dropdown1' }"/>      
-    </div>
+
     
+    <mwl-calendar
+       view="calendarView"
+       current-day="calendarDay"
+       events="events"
+       auto-open="true">
+      </mwl-calendar>
+    
+
     
     <div id="images" ng-init="loadImages()">
       <div class="row" ng-repeat="image in images" ng-if="$index % 4 === 0">

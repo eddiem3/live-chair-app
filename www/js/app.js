@@ -55,15 +55,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 		}
 	    })
 
+	    .state('tab.barbers', {
+		url: '/barbers',
+		views: {
+		    'tab-barbers': {
+			templateUrl: 'templates/tab-barbers.html',
+			controller: 'BarbersCtrl'
+		    }
+		}
+	    })
+
 	    .state('tab.barber-detail', {
 		url: '/barbers/:barberId',
 		views: {
 		    'tab-barbers':{
 			templateUrl: 'templates/barber-detail.html',
 			controller: 'BarberDetailCtrl'
+			
 		    }
 		}
 	    })
+
+	
 
 	.state('barber-schedule', {
 	    url:'/barbers/:barberId/schedule',
@@ -95,15 +108,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 	// 	}
 	// })
 
-	    .state('tab.barbers', {
-		url: '/barbers',
-		views: {
-		    'tab-barbers': {
-			templateUrl: 'templates/tab-barbers.html',
-			controller: 'BarbersCtrl'
-		    }
-		}
-	    })
+
 
 	    .state('tab.account', {
 		url: '/account',

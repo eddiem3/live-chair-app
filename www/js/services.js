@@ -25,7 +25,7 @@ angular.module('starter.services', [])
 
 		    
 		})
-		console.log(barbers);
+		//console.log(barbers);
 		return barbers;
 	    },
 
@@ -34,8 +34,9 @@ angular.module('starter.services', [])
 		
 		for (var i = 0; i < barbers.length; i++) {
 		    //console.log("Here's a barber:" +barbers[i].objectId);
-		    
-		    if (barbers[i].objectId === barberId) {			
+
+		    if (barbers[i].objectId === barberId) {
+			console.log("Get barber says the object id is:" +barbers[i].objectId)
 			return barbers[i];
 		    }
 		}

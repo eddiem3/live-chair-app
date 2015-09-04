@@ -9,7 +9,8 @@
   <ion-content has-header="true">
     <div id="profile-bg"></div>
     <div id="content">
-      
+
+      <p>ALJAHAJ;FH;LHA;KLFDHKSJFAD</p>
       <!--Arrange profile data -->
       <div id="profile-info">
 	<img id="profile-image" ng-src="{{barber.profilePhoto}}">
@@ -32,13 +33,25 @@
     <!--<img src="http://placehold.it/100x100">-->
 
 
+
+    <p>ALKJL;KHJlafhLKhaklfHLAHFKLah:fhK;AHfkladh:fha</p>
+
     
     <mwl-calendar
        view="calendarView"
        current-day="calendarDay"
        events="events"
+       view-title="calendarTitle"
+       on-event-click="eventClicked(calendarEvent)"
+       on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+       edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+       delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+       on-edit-event-click="eventEdited(calendarEvent)"
+       on-delete-event-click="eventDeleted(calendarEvent)"
        auto-open="true">
       </mwl-calendar>
+    
+
     
 
     
